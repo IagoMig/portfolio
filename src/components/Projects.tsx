@@ -11,7 +11,6 @@ const projects = [
     description:
       'Sistema completo de pedidos online, com gerenciamento de produtos, acompanhamento em tempo real e painel administrativo.',
     link: 'https://los-potatos.vercel.app',
-    image: '/projects/los-potatos.jpg'
   },
   {
     id: 2,
@@ -21,7 +20,6 @@ const projects = [
     description:
       'Site institucional com blog integrado, desenvolvido para fortalecer a presença digital da marca e melhorar o posicionamento nos buscadores.',
     link: 'https://www.lideresteticaautomotiva.com.br',
-    image: '/projects/lider-estetica.jpg'
   },
   {
     id: 3,
@@ -31,7 +29,6 @@ const projects = [
     description:
       'Website corporativo criado para agência digital, com foco em apresentação de serviços, identidade visual moderna e conversão de leads.',
     link: 'https://egmidiagitial.com.br',
-    image: '/projects/eg-midia.jpg'
   },
   {
     id: 4,
@@ -41,7 +38,6 @@ const projects = [
     description:
       'Site institucional para empresa de segurança, com comunicação objetiva, layout profissional e navegação clara.',
     link: 'https://alarseg.vercel.app',
-    image: '/projects/alarseg.jpg'
   },
   {
     id: 5,
@@ -51,7 +47,6 @@ const projects = [
     description:
       'Cardápio digital interativo desenvolvido para facilitar a visualização dos produtos, preços e melhorar a experiência do cliente.',
     link: 'https://fornalha.vercel.app',
-    image: '/projects/fornalha.jpg'
   }
 ];
 
@@ -80,46 +75,36 @@ export function Projects() {
                 href={project.link}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative bg-gray-900/20 border border-white/10 hover:border-white/40 transition-all duration-500 h-full flex flex-col"
+                className="group relative bg-gray-900/20 border border-white/10 hover:border-white/40 transition-all duration-500 h-full flex flex-col p-8 overflow-hidden"
               >
-                {/* IMAGEM DO PROJETO */}
-                <div className="w-full aspect-video overflow-hidden relative">
-                  <img
-                    src={project.image}
-                    alt={project.title}
-                    className="w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-700"
-                  />
-
-                  <div className="absolute inset-0 bg-black/40 group-hover:bg-black/10 transition-colors duration-500" />
-
-                  <div className="absolute top-4 right-4">
-                    <ArrowUpRightIcon className="w-5 h-5 text-white opacity-70 group-hover:opacity-100 transition-opacity" />
-                  </div>
-
-                  <div className="absolute bottom-4 left-4 text-6xl font-bold text-black/30 select-none">
-                    {String(index + 1).padStart(2, '0')}
-                  </div>
+                {/* Elementos Estéticos de Canto (Ícone e Número) */}
+                <div className="absolute top-6 right-6 z-10">
+                  <ArrowUpRightIcon className="w-5 h-5 text-white opacity-50 group-hover:opacity-100 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition-all duration-300" />
+                </div>
+                
+                <div className="absolute -bottom-6 -right-2 text-8xl font-black text-white/[0.03] select-none group-hover:text-white/[0.05] transition-colors duration-500">
+                  {String(index + 1).padStart(2, '0')}
                 </div>
 
                 {/* CONTEÚDO */}
-                <div className="p-8 flex-1 flex flex-col">
-                  <span className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3">
+                <div className="relative z-10 flex-1 flex flex-col">
+                  <span className="text-xs font-bold uppercase tracking-widest text-gray-500 mb-3 block">
                     {project.category}
                   </span>
 
-                  <h3 className="text-3xl font-bold text-white mb-4 group-hover:text-gray-200 transition-colors">
+                  <h3 className="text-3xl font-bold text-white mb-5 group-hover:text-gray-200 transition-colors">
                     {project.title}
                   </h3>
 
-                  <p className="text-gray-400 font-light mb-8 flex-1">
+                  <p className="text-gray-400 font-light mb-10 flex-1 leading-relaxed">
                     {project.description}
                   </p>
 
-                  <div className="flex flex-wrap gap-2 mt-auto">
+                  <div className="flex flex-wrap gap-2.5 mt-auto">
                     {project.tech.map((t) => (
                       <span
                         key={t}
-                        className="text-xs border border-white/10 px-3 py-1 text-gray-400"
+                        className="text-xs border border-white/10 px-3.5 py-1.5 text-gray-400 bg-black/20"
                       >
                         {t}
                       </span>
