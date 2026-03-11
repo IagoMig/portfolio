@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import { ArrowDownIcon } from 'lucide-react';
+import { ArrowDownIcon, DownloadIcon } from 'lucide-react';
 
 export function Hero() {
   return (
@@ -74,13 +74,23 @@ export function Hero() {
           className="mt-12 flex flex-col md:flex-row md:items-end justify-between border-t border-white/20 pt-8"
         >
           <div className="max-w-md">
-            <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed">
+            <p className="text-xl md:text-2xl text-gray-300 font-light leading-relaxed mb-8">
               Desenvolvedor Full Stack focado em criar experiências digitais
               sólidas, modernas e com identidade.
             </p>
+            
+            {/* BOTÃO BAIXAR CV */}
+            <a 
+              href="/curriculo_iago_oliveira.pdf" 
+              download
+              className="inline-flex items-center gap-3 px-6 py-3 border border-white/20 text-white text-xs uppercase tracking-[0.2em] hover:bg-white hover:text-black transition-all duration-300 group"
+            >
+              Baixar CV
+              <DownloadIcon className="w-4 h-4 opacity-50 group-hover:opacity-100 transition-opacity" />
+            </a>
           </div>
 
-          <div className="mt-8 md:mt-0">
+          <div className="mt-8 md:mt-0 text-right">
             <p className="text-sm text-gray-400 uppercase tracking-widest">
               Aberto a projetos e freelances!
             </p>

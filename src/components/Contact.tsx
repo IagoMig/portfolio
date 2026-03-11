@@ -1,7 +1,13 @@
 import React from 'react';
 import { Reveal } from './ui/Reveal';
 import { GithubIcon, LinkedinIcon, MailIcon } from 'lucide-react';
+
 export function Contact() {
+  const email = 'iagom3008@icloud.com';
+  const githubUrl = 'https://github.com/IagoMig';
+  const linkedinUrl = 'https://www.linkedin.com/in/iago-oliveira-53b8013ab/';
+  const whatsappUrl = 'https://wa.me/5541991091473'; 
+
   return (
     <section id="contact" className="py-24 md:py-32 px-6">
       <div className="max-w-7xl mx-auto text-center">
@@ -20,32 +26,38 @@ export function Contact() {
 
         <Reveal width="100%" delay={0.4}>
           <a
-            href="mailto:contato@iagooliveira.dev"
-            className="inline-block border border-white px-12 py-4 text-white text-lg tracking-widest hover:bg-white hover:text-black transition-all duration-300 mb-24">
-
+            href={whatsappUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-block border border-white px-12 py-4 text-white text-lg tracking-widest hover:bg-white hover:text-black transition-all duration-300 mb-24"
+          >
             ENTRAR EM CONTATO
           </a>
         </Reveal>
 
         <div className="flex justify-center space-x-12 border-t border-white/10 pt-12">
           <a
-            href="#"
-            className="text-gray-500 hover:text-white transition-colors duration-300">
-
+            href={githubUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-white transition-colors duration-300"
+          >
             <GithubIcon className="w-8 h-8" />
             <span className="sr-only">GitHub</span>
           </a>
           <a
-            href="#"
-            className="text-gray-500 hover:text-white transition-colors duration-300">
-
+            href={linkedinUrl}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-gray-500 hover:text-white transition-colors duration-300"
+          >
             <LinkedinIcon className="w-8 h-8" />
             <span className="sr-only">LinkedIn</span>
           </a>
           <a
-            href="mailto:contato@iagooliveira.dev"
-            className="text-gray-500 hover:text-white transition-colors duration-300">
-
+            href={`mailto:${email}`}
+            className="text-gray-500 hover:text-white transition-colors duration-300"
+          >
             <MailIcon className="w-8 h-8" />
             <span className="sr-only">E-mail</span>
           </a>
@@ -55,6 +67,6 @@ export function Contact() {
           © 2026 Iago Oliveira. Todos os direitos reservados.
         </div>
       </div>
-    </section>);
-
+    </section>
+  );
 }
